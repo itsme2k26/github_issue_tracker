@@ -22,10 +22,9 @@
 
 </head>
 
-<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+<body>
 
-    <header class="">
-    </header>
+    <header></header>
 
     <main>
         <!-- Login Card -->
@@ -45,17 +44,17 @@
                 <!-- UserName -->
                 <div class="mb-4">
                     <label for="" class="block text-sm font-medium mb-1">Username</label>
-                    <input type="text" placeholder="Enter Username"
+                    <input type="text" placeholder="Enter Username" id="username" value=""
                         class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500">
                 </div>
                 <!-- Password -->
                 <div class="mb-5">
                     <label for="" class="block text-sm font-medium mb-1">Password</label>
-                    <input type="password" placeholder="Enter Password"
+                    <input type="password" placeholder="Enter Password" id="password" value=""
                         class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500">
                 </div>
                 <!-- Button -->
-                <button class="w-full py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-purple-600 to-indigo-600 hover:opacity-90">Sign In</button>
+                <button onclick="login()" class="w-full py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-purple-600 to-indigo-600 hover:opacity-90 hover:cursor-pointer">Sign In</button>
                 <!-- Divider -->
                 <div class="flex items-center my-6">
                     <div class="flex-grow border-t"></div>
@@ -78,6 +77,7 @@
 
 
     <script src="index.js"></script>
+    <script src="JS/login.js"></script>
 </body>
 
 </html>

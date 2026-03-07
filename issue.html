@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue All</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- fon-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+
+</head>
+
+<body>
+    <header>
+        <div class=" flex justify-between items-center">
+            <!-- left -->
+            <div class="flex items-center ml-4 gap-2">
+                <img src="assets/github-logo.png" alt="" class="w-10 h-10">
+                <h1 class="font-bold text-[30px] ">GitHub Issue tracker</h1>
+            </div>
+            <!-- right -->
+            <div class="flex items-center gap-4">
+                <div class="flex items-center border border-gray-300 rounded-lg px-4 py-2 bg-gray-50 w-72">
+
+                    <i class="fa-solid fa-magnifying-glass text-gray-500 mr-2"></i>
+
+                    <input type="text" placeholder="Search issues..."
+                        class="bg-transparent outline-none w-full text-gray-600 placeholder-gray-400 border-none">
+                </div>
+
+                <button
+                    class="w-[130px] h-[44px] bg-gradient-to-r from-purple-600 to-indigo-600  text-white rounded-lg font-medium mr-2 hover:cursor-pointer"> +
+                    New issue</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="bg-gray-100 p-6 rounded-xl border border-gray-200 max-w-[1600px] mx-auto mt-5">
+            <div class="flex gap-3">
+
+                <button
+                    class="px-6 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-medium hover:cursor-pointer">
+                    All
+                </button>
+
+                <button
+                    class="px-6 py-2 rounded-lg bg-white border border-gray-300 text-gray-600 font-medium hover:bg-gray-50 hover:cursor-pointer">
+                    Open
+                </button>
+
+                <button
+                    class="px-6 py-2 rounded-lg bg-white border border-gray-300 text-gray-600 font-medium hover:bg-gray-50 hover:cursor-pointer">
+                    Closed
+                </button>
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
