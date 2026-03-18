@@ -19,56 +19,154 @@
     <!-- DaisyUI -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    
+
 
 </head>
 
-<body>
+<body class="bg-gray-100">
     <header>
-        <div class=" flex justify-between items-center">
-            <!-- left -->
-            <div class="flex items-center ml-4 gap-2">
-                <img src="assets/github-logo.png" alt="" class="w-10 h-10">
-                <h1 class="font-bold text-[30px] ">GitHub Issue tracker</h1>
-            </div>
-            <!-- right -->
-            <div class="flex items-center gap-4">
-                <div class="flex items-center border border-gray-300 rounded-lg px-4 py-2 bg-gray-50 w-72">
+        <nav class="bg-white border-b">
 
-                    <i class="fa-solid fa-magnifying-glass text-gray-500 mr-2"></i>
+            <div class="max-w-8xl mx-auto px-6 py-4 flex justify-between">
 
-                    <input type="text" placeholder="Search issues..."
-                        class="bg-transparent outline-none w-full text-gray-600 placeholder-gray-400 border-none">
+                <div class="flex items-center gap-2">
+
+                    <img src="assets/github-logo.png" class="w-6">
+
+                    <h1 class="font-semibold">GitHub Issues Tracker</h1>
+
                 </div>
 
-                <button
-                    class="w-[130px] h-[44px] bg-gradient-to-r from-purple-600 to-indigo-600  text-white rounded-lg font-medium mr-2 hover:cursor-pointer"> +
-                    New issue</button>
+                <div class="flex gap-2">
+
+                    <input id="searchInput" class="border px-3 py-1 rounded text-sm" placeholder="Search issues">
+
+                    <button onclick="searchIssues()" class="bg-indigo-600 text-white px-3 py-1 rounded text-sm">
+                        Search
+                    </button>
+
+                </div>
+
             </div>
-        </div>
+
+        </nav>
     </header>
 
-    <main>
-        <div class="bg-gray-100 p-6 rounded-xl border border-gray-200 max-w-[1600px] mx-auto mt-5">
-            <div class="flex gap-3">
+    <main class="space-y-4">
+        <!-- all open close -->
+        <section
+            class="max-w-[1600px] mx-auto bg-white rounded-xl shadow-sm  p-2 mt-3 flex items-center justify-between">
+            <!-- TABS -->
+            <div class="bg-white p-6 w-9 rounded-xl border border-gray-200  mt-5">
+                <div class="flex gap-3">
+                    <button class="tab bg-indigo-600 text-white px-4 py-1 rounded text-sm" onclick="filterTab('all')">
+                        All
+                    </button>
 
-                <button
-                    class="px-6 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-medium hover:cursor-pointer">
-                    All
-                </button>
+                    <button class="tab bg-gray-200 px-4 py-1 rounded text-sm" onclick="filterTab('open')">
+                        Open
+                    </button>
 
-                <button
-                    class="px-6 py-2 rounded-lg bg-white border border-gray-300 text-gray-600 font-medium hover:bg-gray-50 hover:cursor-pointer">
-                    Open
-                </button>
+                    <button class="tab bg-gray-200 px-4 py-1 rounded text-sm" onclick="filterTab('closed')">
+                        Closed
+                    </button>
 
-                <button
-                    class="px-6 py-2 rounded-lg bg-white border border-gray-300 text-gray-600 font-medium hover:bg-gray-50 hover:cursor-pointer">
-                    Closed
-                </button>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="max-w-[1600px] mx-auto bg-white rounded-xl shadow-sm  p-6 flex items-center justify-between">
+
+            <div class="flex items-center gap-4">
+
+                <!-- Icon Placeholder -->
+                <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100">
+                    <img src="assets/Aperture.png" alt="">
+                </div>
+
+                <!-- Text -->
+                <div>
+                    <h2 class="text-lg font-semibold text-gray-800">50 Issues</h2>
+                    <p class="text-sm text-gray-500">Track and manage your project issues</p>
+                </div>
 
             </div>
-        </div>
+
+            <!-- Status -->
+            <div class="flex items-center gap-4 text-sm">
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
+                    <span class="text-gray-600">Open</span>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span>
+                    <span class="text-gray-600">Closed</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- card section -->
+        <section
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-gray-50 space-y-4 max-w-[1600px] mx-auto rounded-xl p-3 ">
+
+            <!-- Card -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200  overflow-hidden">
+
+                <!-- Top Border -->
+                <div class="h-1 bg-green-500"></div>
+
+                <div class="p-5">
+
+                    <!-- Top Row -->
+                    <div class="flex items-center justify-between mb-4">
+
+                        <!-- Icon -->
+                        <div class="w-9 h-9 flex items-center justify-center rounded-full bg-green-100">
+                            <img src="assets/Open-Status.png" alt="">
+                        </div>
+
+                        <!-- Priority -->
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-500">
+                            HIGH
+                        </span>
+                    </div>
+
+                    <!-- Title -->
+                    <h3 class="text-gray-800 font-semibold leading-snug mb-2">
+                        Fix Navigation Menu On Mobile Devices
+                    </h3>
+
+                    <!-- Description -->
+                    <p class="text-sm text-gray-500 mb-4">
+                        The navigation menu doesn't collapse properly on mobile devices...
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex gap-2 mb-4 flex-wrap">
+                        <span class="flex items-center gap-1 text-xs px-3 py-1 rounded-full bg-red-100 text-red-500">
+                            BUG
+                        </span>
+                        <span
+                            class="flex items-center gap-1 text-xs px-3 py-1 rounded-full bg-yellow-100 text-yellow-600">
+                            HELP WANTED
+                        </span>
+                    </div>
+
+                </div>
+
+                <!-- Footer -->
+                <div class="border-t px-5 py-3 text-sm text-gray-500">
+                    <p>#1 by john_doe</p>
+                    <p>1/15/2024</p>
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
 </body>
 
