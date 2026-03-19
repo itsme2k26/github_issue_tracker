@@ -26,14 +26,14 @@
     </nav>
 
     <!-- TABS -->
-    <div class="p-6 flex gap-3">
+    <div class="p-6 flex gap-3 max-w-[1500px] mx-auto" >
         <button class="tab bg-indigo-600 text-white px-4 py-1 rounded" onclick="filterTab('all', event)">All</button>
         <button class="tab bg-gray-200 px-4 py-1 rounded" onclick="filterTab('open', event)">Open</button>
         <button class="tab bg-gray-200 px-4 py-1 rounded" onclick="filterTab('closed', event)">Closed</button>
     </div>
 
     <!-- COUNT -->
-    <div class="px-6 flex justify-between items-center">
+    <div class="px-6 flex justify-between items-center max-w-[1500px] mx-auto">
         <h2 id="issueCount">0 Issues</h2>
 
         <div class="flex gap-4 text-sm">
@@ -43,12 +43,12 @@
     </div>
 
     <!-- SPINNER -->
-    <div id="spinner" class="hidden text-center mt-6">
+    <div id="spinner" class="hidden text-center mt-6 mx-auto">
         <span class="loading loading-spinner text-indigo-600"></span>
     </div>
 
     <!-- CARDS -->
-    <div id="issuesContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
+    <div id="issuesContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6 max-w-[1500px] mx-auto">
     </div>
 
     <!-- MODAL -->

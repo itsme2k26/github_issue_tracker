@@ -40,26 +40,66 @@ function displayIssues(issues) {
 
         const div = document.createElement("div")
 
-        div.className = "bg-white rounded shadow cursor-pointer"
+        div.className = "bg-white rounded-xl shadow hover:shadow-lg transition cursor-pointer overflow-hidden"
 
         div.innerHTML = `
-            <div class="h-1 ${issue.status === "open" ? "bg-green-500" : "bg-purple-500"}"></div>
+    <!-- TOP BAR -->
+    <div class="h-1 ${issue.status === "open" ? "bg-green-500" : "bg-purple-500"}"></div>
 
-            <div class="p-4">
+    <div class="p-4 space-y-3">
 
-                <h3 class="font-semibold text-sm mb-2">${issue.title}</h3>
+        <!-- PRIORITY -->
+        <div class="flex justify-between items-center">
+            <span class="w-6 h-6 flex items-center justify-center rounded-full bg-green-100 text-green-600 text-xs">✓</span>
 
-                <p class="text-xs text-gray-500 mb-2">
-                    ${issue.description.slice(0, 60)}...
-                </p>
+            <span class="text-xs px-3 py-1 rounded-full font-medium
+                ${issue.priority === "high"
+                ? "bg-red-100 text-red-500"
+                : issue.priority === "medium"
+                    ? "bg-yellow-100 text-yellow-600"
+                    : "bg-gray-200 text-gray-500"
+            }
+            ">
+                ${issue.priority.toUpperCase()}
+            </span>
+        </div>
 
-                <div class="flex justify-between text-xs text-gray-400">
-                    <span>${issue.author}</span>
-                    <span>${issue.createdAt}</span>
-                </div>
+        <!-- TITLE -->
+        <h3 class="font-semibold text-sm leading-5">
+            ${issue.title}
+        </h3>
 
-            </div>
-        `
+        <!-- DESCRIPTION -->
+        <p class="text-xs text-gray-500">
+            ${issue.description.slice(0, 70)}...
+        </p>
+
+        <!-- LABELS -->
+        <div class="flex gap-2 flex-wrap text-xs">
+            ${issue.label === "bug"
+                ? `<span class="bg-red-100 text-red-500 px-2 py-1 rounded-full">BUG</span>`
+                : ""
+            }
+
+            ${issue.label === "help wanted"
+                ? `<span class="bg-yellow-100 text-yellow-600 px-2 py-1 rounded-full">HELP WANTED</span>`
+                : ""
+            }
+
+            ${issue.label === "enhancement"
+                ? `<span class="bg-green-100 text-green-600 px-2 py-1 rounded-full">ENHANCEMENT</span>`
+                : ""
+            }
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="border-t px-4 py-3 text-xs text-gray-400">
+        <p>#1 by ${issue.author}</p>
+        <p>${issue.createdAt}</p>
+    </div>
+`
 
         div.onclick = () => openModal(issue.id)
 
@@ -121,7 +161,11 @@ async function openModal(id) {
 
 // MODAL close
 
-function closeModal(){
+function closeModal() {
     modal.classList.add("hidden")
     modal.classList.remove("flex")
 }
+
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) closeModal()
+})
