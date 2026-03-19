@@ -1,82 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GITHUB_Issue_Tracker</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <title>GitHub Issues Tracker</title>
 
-    <!-- fon-awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- DaisyUI -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
 </head>
 
 <body>
 
-    <header></header>
+<section class="flex items-center justify-center bg-gray-100 min-h-screen">
+    <div class="w-[400px] bg-white rounded-xl shadow-lg p-8">
 
-    <main>
-        <!-- Login Card -->
-        <section class="flex items-center justify-center bg-gray-100 min-h-screen">
-            <div class="w-[550px] bg-white rounded-xl shadow-lg p-8">
-                <!-- Icon -->
-                <div class="flex justify-center mb-4">
-                    <div class="flex items-center justify-center">
-                        <img src="assets/github-logo.png" alt="" srcset="">
-                    </div>
-                </div>
-                <!-- Title -->
-                <div class="text-center mb-6">
-                    <h2 class="text-2xl font-semibold text-gray-800">GitHub Issues Tracker</h2>
-                    <p class="text-gray-500 text-sm">Sign in to manage your issues</p>
-                </div>
-                <!-- UserName -->
-                <div class="mb-4">
-                    <label for="" class="block text-sm font-medium mb-1">Username</label>
-                    <input type="text" placeholder="Enter Username" id="username" value=""
-                        class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500">
-                </div>
-                <!-- Password -->
-                <div class="mb-5">
-                    <label for="" class="block text-sm font-medium mb-1">Password</label>
-                    <input type="password" placeholder="Enter Password" id="password" value=""
-                        class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500">
-                </div>
-                <!-- Button -->
-                <button onclick="login()" class="w-full py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-purple-600 to-indigo-600 hover:opacity-90 hover:cursor-pointer">Sign In</button>
-                <!-- Divider -->
-                <div class="flex items-center my-6">
-                    <div class="flex-grow border-t"></div>
-                    <span class="px-3 text-sm text-gray-500">OR</span>
-                    <div class="flex-grow border-t"></div>
-                </div>
+        <div class="text-center mb-6">
+            <img src="assets/github-logo.png" class="mx-auto mb-3 w-12">
+            <h2 class="text-xl font-semibold">GitHub Issues Tracker</h2>
+            <p class="text-gray-500 text-sm">Sign in to manage your issues</p>
+        </div>
 
-                <!-- Demo or Hints for password -->
-                <div class="bg-gray-100 p-4 rounded-lg text-center text-sm">
-                    <p class="text-gray-500 mb-2">Demo Credentials:</p>
-                    <p><span class="font-semibold">Username:</span> admin</p>
-                    <p><span class="font-semibold">Password:</span> admin123</p>
-                </div>
-            </div>
-        </section>
+        <input id="username" placeholder="Username"
+            class="w-full border px-3 py-2 rounded mb-3">
 
-    </main>
+        <input id="password" type="password" placeholder="Password"
+            class="w-full border px-3 py-2 rounded mb-4">
 
-    <footer></footer>
+        <button onclick="login()"
+            class="w-full bg-indigo-600 text-white py-2 rounded">
+            Sign In
+        </button>
 
+        <div class="mt-4 text-center text-sm text-gray-500">
+            Username: <b>admin</b> <br>
+            Password: <b>admin123</b>
+        </div>
 
-    <script src="JS/index.js"></script>
+    </div>
+</section>
+
+<script src="JS/index.js"></script>
 </body>
-
 </html>
