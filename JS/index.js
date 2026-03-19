@@ -100,3 +100,28 @@ async function searchIssues() {
     displayIssues(data.data)
 }
 
+
+// MODAL Open
+async function openModal(id) {
+
+    const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`)
+    const data = await res.json()
+    const issue = data.data
+
+    modalTitle.innerText = issue.title
+    modalDesc.innerText = issue.description
+    modalAuthor.innerText = "Author: " + issue.author
+    modalPriority.innerText = "Priority: " + issue.priority
+    modalLabel.innerText = "Label: " + issue.label
+    modalDate.innerText = issue.createdAt
+
+    modal.classList.remove("hidden")
+    modal.classList.add("flex")
+}
+
+// MODAL close
+
+function closeModal(){
+    modal.classList.add("hidden")
+    modal.classList.remove("flex")
+}
